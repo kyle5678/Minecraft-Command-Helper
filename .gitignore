@@ -1,0 +1,9 @@
+﻿bin/
+obj/
+Properties/
+Minecraft Command Helper.csproj
+Minecraft Command Helper.csproj.user
+packages.config
+Web.config
+Web.Debug.config
+Web.Release.config

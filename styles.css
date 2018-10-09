@@ -1,0 +1,30 @@
+﻿div.body {
+    margin: 20px;
+}
+
+div.title {
+}
+
+div.generator {
+    background-color: #eee;
+    width: 100%;
+    padding: 1em;
+    border-radius: 7px;
+}
+
+    div.generator .text {
+        border-radius: 5px;
+        border: 2px solid black;
+        padding: 8px;
+        outline: none;
+        color: black;
+        background-color: white;
+    }
+
+        div.generator .text:focus {
+            border: 2px solid blue;
+        }
+
+    div.generator textarea#command {
+        width: 100%;
+    }
