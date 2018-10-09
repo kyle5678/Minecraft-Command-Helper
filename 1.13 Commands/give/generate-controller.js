@@ -6,6 +6,20 @@
     var Items = document.getElementById("item");
     var Item = Items.options[Items.selectedIndex].value;
 
+    var ItemName = document.getElementById("item-name").value;
+    var HasName;
+    if (ItemName == "")
+        HasName = false;
+    else
+        HasName = true;
+
+    var ItemLore = document.getElementById("item-lore").value;
+    var HasLore;
+    if (ItemLore == "")
+        HasLore = false;
+    else
+        HasLore = true;
+
     if (PlayerSelector == "playername")
         PlayerSelector = PlayerName;
 
@@ -14,6 +28,22 @@
     } else {
         Command = document.getElementById("command");
         Command.innerHTML = "/give " + PlayerSelector + " minecraft:" + Item;
+        if (HasName == true || HasLore == true) {
+            Command.innerHTML = Command.innerHTML + "{display:{";
+
+            if (HasName == true) {
+                Command.innerHTML = Command.innerHTML + 'Name:"\\"' + ItemName + '\\""';
+                if (HasLore == true) {
+                    Command.innerHTML = Command.innerHTML + ',';
+                }
+            }
+
+            if (HasLore == true) {
+                Command.innerHTML = Command.innerHTML + 'Lore:["' + ItemLore + '"]';
+            }
+
+            Command.innerHTML = Command.innerHTML + "}}";
+        }
     }
 }
 

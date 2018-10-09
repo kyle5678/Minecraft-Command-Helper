@@ -42,7 +42,14 @@
                     <option value="stone" selected>Stone</option>
                     <option value="oak_planks">Oak Planks</option>
                 </select>
-                <input id="to-player-name" class="text" type="text" placeholder="Player Name" style="visibility: hidden;" />
+            </p>
+            <p>
+                Item Name:
+                <input id="item-name" class="text" type="text" placeholder="Item Name" />
+            </p>
+            <p>
+                Item Lore:
+                <input id="item-lore" class="text" type="text" placeholder="Item Lore" />
             </p>
             <button class="btn btn-success" onclick="generate()">Generate Command</button>
             <button class="btn btn-primary" onclick="copycommand()">Copy to Clipboard</button>
