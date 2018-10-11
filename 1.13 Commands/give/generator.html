@@ -42,15 +42,28 @@
                     <option value="stone" selected>Stone</option>
                     <option value="oak_planks">Oak Planks</option>
                 </select>
+
+                Quantity:
+                <input id="item-quantity" class="text" type="number" value="1" min="1" />
             </p>
-            <p>
-                Item Name:
-                <input id="item-name" class="text" type="text" placeholder="Item Name" />
-            </p>
-            <p>
-                Item Lore:
-                <input id="item-lore" class="text" type="text" placeholder="Item Lore" />
-            </p>
+
+            <div class="inb-category">
+                <button id="item-display-show" class="btn btn-success" onclick="showhideitemdisplay()">SHOW</button>
+                <b>Item Display</b>
+
+                <div id="item-display-contents" style="display: none;">
+                    <p>
+                        Item Name:
+                        <input id="item-name" class="text" type="text" placeholder="Item Name" />
+                    </p>
+                    <p>
+                        Item Lore:
+                        <input id="item-lore" class="text" type="text" placeholder="Item Lore" />
+                    </p>
+                </div>
+            </div>
+
+            <br />
             <button class="btn btn-success" onclick="generate()">Generate Command</button>
             <button class="btn btn-primary" onclick="copycommand()">Copy to Clipboard</button>
             <textarea id="command" class="text" disabled>

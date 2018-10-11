@@ -5,6 +5,7 @@
 
     var Items = document.getElementById("item");
     var Item = Items.options[Items.selectedIndex].value;
+    var Quantity = document.getElementById("item-quantity").value;
 
     var ItemName = document.getElementById("item-name").value;
     var HasName;
@@ -24,10 +25,13 @@
         PlayerSelector = PlayerName;
 
     if (PlayerSelector == "noplayer") {
-        alert("Please select a player to give the item to!!!")
+        alert("Please select a player to give the item to!!!");
+    } else if (Quantity <= 0) {
+        alert("The quantity cannot be lower than 1!");
     } else {
         Command = document.getElementById("command");
         Command.innerHTML = "/give " + PlayerSelector + " minecraft:" + Item;
+
         if (HasName == true || HasLore == true) {
             Command.innerHTML = Command.innerHTML + "{display:{";
 
@@ -44,6 +48,7 @@
 
             Command.innerHTML = Command.innerHTML + "}}";
         }
+        Command.innerHTML = Command.innerHTML + " " + Quantity;
     }
 }
 
@@ -65,4 +70,23 @@ function toplayerchanged() {
         Name.style.visibility = "visible";
     else
         Name.style.visibility = "hidden";
+}
+
+function showhideitemdisplay() {
+    var Contents = document.getElementById("item-display-contents");
+    var Button = document.getElementById("item-display-show");
+
+    if (Button.innerHTML == "SHOW") {
+        Button.innerHTML = "HIDE";
+        Button.classList.remove("btn-success");
+        Button.classList.add("btn-danger");
+
+        Contents.style.display = "block";
+    } else {
+        Button.innerHTML = "SHOW";
+        Button.classList.remove("btn-danger");
+        Button.classList.add("btn-success");
+
+        Contents.style.display = "none";
+    }
 }
