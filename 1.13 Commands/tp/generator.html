@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>/tp 1.13 | Minecraft Command Helper</title>
+
+    <!-- Local -->
+    <link rel="stylesheet" type="text/css" href="../../styles.css" />
+    <script src="generate-controller.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jumbotron title">
+        <h1>Minecraft Command Helper</h1>
+    </div>
+
+    <div class="body">
+        <h3>/tp 1.13 (also /teleport)</h3>
+        <p>The /tp command is used to say a message in chat to a specific player.</p>
+        <div class="generator">
+            <p>
+                Teleport Player/Entity:
+                <select id="to-player" onchange="toplayerchanged()">
+                    <option value="noplayer" selected>&lt;CHOOSE ONE></option>
+                    <option value="@s">Self</option>
+                    <option value="@p">Closest Player</option>
+                    <option value="@e">All Entities</option>
+                    <option value="@a">All Players</option>
+                    <option value="@r">Random Player</option>
+                    <option value="playername">Player Name</option>
+                </select>
+                <input id="to-player-name" class="text" type="text" placeholder="Player Name" style="visibility: hidden;" />
+            </p>
+            <div class="inb-category">
+                <p><b>Coordinates</b></p>
+                <p>
+                    X:
+                    <input id="x-coords" class="text number" type="number" placeholder="X" />
+                    <span class="checkbox uncheck" id="x-relative">
+                        <img onclick="checkbox('x-relative')" id="checked" src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/1/1e/TNT.png?version=07014ae9509ec7400fd401ee28ac8a1a" />
+                        <img onclick="checkbox('x-relative')" id="unchecked" src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/thumb/d/d3/White_Concrete.png/150px-White_Concrete.png?version=a7b6e44d9c7cce85eec9cf537ef47d34" />
+                        Use Relative Position
+                    </span>
+                </p>
+                <p>
+                    Y:
+                    <input id="y-coords" class="text number" type="number" placeholder="Y" />
+                    <span class="checkbox uncheck" id="y-relative">
+                        <img onclick="checkbox('y-relative')" id="checked" src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/1/1e/TNT.png?version=07014ae9509ec7400fd401ee28ac8a1a" />
+                        <img onclick="checkbox('y-relative')" id="unchecked" src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/thumb/d/d3/White_Concrete.png/150px-White_Concrete.png?version=a7b6e44d9c7cce85eec9cf537ef47d34" />
+                        Use Relative Position
+                    </span>
+                </p>
+                <p>
+                    Z:
+                    <input id="z-coords" class="text number" type="number" placeholder="Z" />
+                    <span class="checkbox uncheck" id="z-relative">
+                        <img onclick="checkbox('z-relative')" id="checked" src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/1/1e/TNT.png?version=07014ae9509ec7400fd401ee28ac8a1a" />
+                        <img onclick="checkbox('z-relative')" id="unchecked" src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/thumb/d/d3/White_Concrete.png/150px-White_Concrete.png?version=a7b6e44d9c7cce85eec9cf537ef47d34" />
+                        Use Relative Position
+                    </span>
+                </p>
+            </div><br />
+            <button class="btn btn-success" onclick="generate()">Generate Command</button>
+            <button class="btn btn-primary" onclick="copycommand()">Copy to Clipboard</button>
+            <textarea id="command" class="text" disabled>
+Generated Command</textarea>
+        </div>
+    </div>
+</body>
+</html>

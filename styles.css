@@ -36,3 +36,22 @@ div.generator {
     div.generator textarea#command {
         width: 100%;
     }
+
+    div.generator .number {
+        width: 4em;
+    }
+
+span.checkbox {
+}
+
+    span.checkbox img {
+        width: 2rem;
+    }
+
+    span.checkbox.check img#unchecked {
+        display: none;
+    }
+
+    span.checkbox.uncheck img#checked {
+        display: none;
+    }
