@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>/tp 1.13 | Minecraft Command Helper</title>
+    <title>/setblock 1.13 | Minecraft Command Helper</title>
 
     <!-- Local -->
     <link rel="stylesheet" type="text/css" href="../../styles.css" />
@@ -20,22 +20,9 @@
     </div>
 
     <div class="body">
-        <h3>/tp 1.13 (also /teleport)</h3>
-        <p>The /tp command is used to teleport a specific player(s) or entity(ies) to a specified location.</p>
+        <h3>/setblock 1.13</h3>
+        <p>The /setblock command is used to change a single block to another block.</p>
         <div class="generator">
-            <p>
-                Teleport Player/Entity:
-                <select id="to-player" onchange="toplayerchanged()">
-                    <option value="noplayer" selected>&lt;CHOOSE ONE></option>
-                    <option value="@s">Self</option>
-                    <option value="@p">Closest Player</option>
-                    <option value="@e">All Entities</option>
-                    <option value="@a">All Players</option>
-                    <option value="@r">Random Player</option>
-                    <option value="playername">Player Name</option>
-                </select>
-                <input id="to-player-name" class="text" type="text" placeholder="Player Name" style="visibility: hidden;" />
-            </p>
             <div class="inb-category">
                 <p><b>Coordinates</b></p>
                 <p>
@@ -66,6 +53,29 @@
                     </span>
                 </p>
             </div><br />
+            <p>
+                Block:
+                <select id="block">
+                    <option value="stone" selected>Stone</option>
+                    <option value="oak_planks">Oak Planks</option>
+                </select>
+            </p>
+            <div class="inb-category">
+                <button id="item-display-show" class="btn btn-success" onclick="showhideitemdisplay()">SHOW</button>
+                <b>Item Display</b>
+
+                <div id="item-display-contents" style="display: none;">
+                    <p>
+                        Item Name:
+                        <input id="item-name" class="text" type="text" placeholder="Item Name" />
+                    </p>
+                    <p>
+                        Item Lore:
+                        <input id="item-lore" class="text" type="text" placeholder="Item Lore" />
+                    </p>
+                </div>
+            </div><br />
+
             <button class="btn btn-success" onclick="generate()">Generate Command</button>
             <button class="btn btn-primary" onclick="copycommand()">Copy to Clipboard</button>
             <textarea id="command" class="text" disabled>
