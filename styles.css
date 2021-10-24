@@ -1,4 +1,5 @@
-﻿div.body {
+﻿/* css script made by kyle5678 */
+div.body {
     margin: 20px;
 }
 
@@ -44,14 +45,54 @@ div.generator {
 span.checkbox {
 }
 
-    span.checkbox img {
-        width: 2rem;
-    }
+span.checkbox img {
+    width: 2rem;
+}
 
-    span.checkbox.check img#unchecked {
-        display: none;
-    }
+span.checkbox.check img#unchecked {
+    display: none;
+}
 
-    span.checkbox.uncheck img#checked {
-        display: none;
-    }
+span.checkbox.uncheck img#checked {
+    display: none;
+}
+
+/* css script made by Asyfero */
+#bodybackground
+{
+    background-image: linear-gradient(35deg, black, cyan);
+    background-attachment: fixed;
+}
+a:hover
+{
+    color: red;
+    text-decoration: none;
+}
+.main
+{
+    display: flex;
+    justify-content: center;
+}
+.title
+{
+    border: 4px black solid;
+    box-shadow: 6px 6px 6px black;
+}
+.title2
+{
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+}
+.text
+{
+    font-size: 24px;
+    text-align: center;
+}
+.mention
+{
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-size: 17px;
+}
